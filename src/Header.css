@@ -1,0 +1,24 @@
+.header{
+    text-align: center;
+    font-size: 90px;
+    color: grey;
+    height:150px;
+    background-color: #FF9933;
+}
+.footer{
+    text-align: center;
+    font-size: 90px;
+    color: white;
+    background-color: #138808;
+    position: relative;
+    top:150px;
+    height:150px;
+}
+.created_by{
+    text-align: right;
+    font-size:20px;
+}
+
+
+
+

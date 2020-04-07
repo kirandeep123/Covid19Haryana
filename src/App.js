@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import Dashboard from './Dashboard';
+import Header from './Header';
+import Footer from './Footer';
+import {MuiThemeProvider,createMuiTheme} from '@material-ui/core/styles'
+
 import './App.css';
 
 function App() {
+  const theme = createMuiTheme({
+    overrides:{
+      MuiTable:{
+      },
+        MuiTableRow: {
+            root: { //for the body
+                maxHeight: "10px",
+              },
+            head: { //for the head
+                MaxHeight: "10px"
+            }
+        }
+    }
+})
   return (
+    <MuiThemeProvider theme={theme}>
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+     <Dashboard/>
+     <Footer/>
     </div>
+    </MuiThemeProvider>
+
   );
 }
 
