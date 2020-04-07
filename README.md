@@ -1,6 +1,6 @@
 steps to locally run 
 
-git clone
-cd covidharyana
-npm install 
+git clone<br/>
+cd covidharyana<br/>
+npm install <br/>
 npm start 
