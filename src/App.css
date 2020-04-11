@@ -1,12 +1,24 @@
-@import './Dashboard.css';
-@import './Header.css';
+@import "./Dashboard.css";
+@import "./Header.css";
 
-.main-container{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-    margin-top: 20px;
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 120px;
 }
-.App{
-    padding:14px;
+.App {
+  padding: 14px;
+}
+
+.card {
+  width: 200px;
+  height: auto;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid green;
+  background: cadetblue;
+  color: white;
+  padding: 20px;
+  display:inline-block;
 }

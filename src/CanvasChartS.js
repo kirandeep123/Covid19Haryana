@@ -14,7 +14,6 @@ function createDataPoint(data) {
 
 const CanvasChartS = ({ chartdata }) => {
   const result = createDataPoint(chartdata);
-  console.log(result, " cahrtdata result  ");
   const options = {
     title: {
       text: "Haryana District Corona Cases"

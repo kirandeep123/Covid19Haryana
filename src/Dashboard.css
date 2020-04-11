@@ -94,3 +94,13 @@
     transform: rotate(360deg);
   }
 }
+
+
+.totalcount{
+margin-left: 25px;
+}
+.stats-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
