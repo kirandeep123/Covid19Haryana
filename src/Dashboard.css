@@ -1,13 +1,13 @@
 .circle {
-  width: 200px;
-  height: 200px;
+  width: 47px;
+  height: 47px;
   border: 2px solid #000080;
   border-radius: 50%;
   position: absolute;
-  left: 40%;
+  left: 48%;
   -webkit-animation: circle 5s infinite;
   animation: circle 10s linear 2s infinite;
-  margin-top: 150px;
+  margin-top:1px;
 }
 .circle:after {
   content: "";
@@ -18,12 +18,11 @@
   position: absolute;
   top: 45%;
   left: 45%;
-  margin-top: 50px;
 }
 .bar {
   position: absolute;
   display: inline-block;
-  height: 200px;
+  height: 47px;
   width: 2px;
   background: #000080;
   left: 47%;

@@ -1,23 +1,9 @@
 import React, { useEffect, useState } from "react";
-import TableData from "./TableData";
-import { create } from "istanbul-reports";
-
-function createData(district, confirmedCases) {
-  return { district, confirmedCases };
-}
+import Charts from "./Charts";
+import CanvasCharts from './CanvasChartS';
 
 const Dashboard = () => {
-  const [leftRows, setLeftRows] = useState([]);
-  const [rightRows, setRightRows] = useState([]);
-
-  const createRows = data => {
-    setLeftRows(
-      data.slice(0, 9).map(item => createData(item.district, item.confirmed))
-    );
-    setRightRows(
-      data.slice(9, 17).map(item => createData(item.district, item.confirmed))
-    );
-  };
+  const [haryanaData,setHaryanaData]=useState([]);
   async function getData() {
     let response = await fetch(
       "https://api.covid19india.org/v2/state_district_wise.json"
@@ -28,29 +14,16 @@ const Dashboard = () => {
 
   useEffect(() => {
     getData().then(data => {
-      var haryanaData = data.filter(item => item.state === "Haryana");
-      createRows(haryanaData[0].districtData);
+       // eslint-disable-next-line react-hooks/exhaustive-deps
+       setHaryanaData( data.filter(item => item.state === "Haryana")[0].districtData)
+       console.log(haryanaData," haryana hayana ")
     });
   }, []);
 
   return (
     <div className="main-container">
-      <TableData rows={leftRows} />
-      <div class="circle">
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-</div>
-      <TableData rows={rightRows} />
+      {/* <Charts chartdata={haryanaData}/> */}
+      <CanvasCharts chartdata={haryanaData}/>
     </div>
   );
 };
